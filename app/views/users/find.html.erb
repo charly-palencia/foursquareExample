@@ -12,7 +12,7 @@
 			<td><%= user.firstName %></td> 
 			<td><%= user.lastName %></td>
 			<td><%= user.gender %></td>
-			<td><%= link_to 'Badges',  'badges' %></td>
+			<td><%= link_to 'Badges',  user_badges_path(user.id) %></td>
 			<td><%= link_to 'Friends', 'friends' %></td>
 		</tr>
 	<% end %>
