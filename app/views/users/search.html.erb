@@ -1,0 +1,22 @@
+ <%= form_tag("find", :method => "post") do %>
+ <table border=0>
+ 	<tr>
+ 		<td><%= label_tag "Name" %></td>
+ 		<td><%= text_field_tag :name %></td>
+ 	</tr>
+ 	<tr>
+ 		<td><%= label_tag "Phone" %></td>
+ 		<td><%= text_field_tag :phone %></td>
+ 	</tr>
+ 	<tr>
+ 		<td><%= label_tag "E-mail" %></td>
+ 		<td><%= text_field_tag :email %></td>
+ 	</tr>
+ 	<tr>
+ 		<td><%= label_tag "Twitter"%></td>
+ 		<td><%= text_field_tag :twitter %></td>
+ 	</tr>
+ </table>
+  
+  <%= submit_tag "Search" %>
+<% end %>
