@@ -19,4 +19,11 @@ class FoursquareAdapter
 	def has_token?
 		@token!=nil
 	end 
+
+	def generate_client (oauth_code)
+		@token= @client.auth_code.get_token(oauth_code)
+		@client_foursquare=Foursquare2::Client.new(:client_id => id, :client_secret => secret, :token=>@token)
+	end
+
+
 end  
