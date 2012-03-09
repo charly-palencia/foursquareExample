@@ -1,0 +1,10 @@
+<table border=1>
+	<tr><td colspan=2 align='center'>Badges</td></tr>
+<%@badges.badges.each do |badge|%>
+	<tr>
+
+			<td><%=badge[1].name%></td>
+			<td><%=badge[1].hint%></td>
+	</tr>
+<%end%>
+</table>

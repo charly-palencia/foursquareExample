@@ -5,7 +5,10 @@ class UsersController < ApplicationController
 	end
 
 	def find
-		  @client_result=Foursquare_client.search_users(:mail=> "leonardo.sanclemente1@gmail.com")
 
+	end
+
+	def badges
+		@badges = Foursquare_client.get_badges_user(108914)
 	end
 end
