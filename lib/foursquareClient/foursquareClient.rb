@@ -25,10 +25,16 @@ class FoursquareAdapter
 		p "codigo aqui :"+oauth_code
 		@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://localhost:3000/', :grant_type=> "authorization_code")
 		# @token= @client.auth_code.get_token(gets.chomp, :redirect_uri => 'http://localhost:3000/')
-		@client_foursquare=Foursquare2::Client.new( :oauth_token=>@token.token)
-		p @client_foursquare.search_users(:email=> "leonardo.sanclemente1@gmail.com")
+		client_foursquare=Foursquare2::Client.new( :oauth_token=>@token.token)
+		# p @client_foursquare.search_users(:email=> "leonardo.sanclemente1@gmail.com")
 
 	end
 
+	def get_clients(options)
+		client_foursquare.search_users(options)
+	end
+	def get_venues(options)
+		client_foursquare.search_venues(options)
+	end
 
 end  
