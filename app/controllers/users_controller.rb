@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	end
 
 	def find
-		  @client_result=@client_foursquare.search_users(:mail=> "leonardo.sanclemente1@gmail.com")
+		  @client_result=Foursquare_client.search_users(:mail=> "leonardo.sanclemente1@gmail.com")
 
 	end
 end

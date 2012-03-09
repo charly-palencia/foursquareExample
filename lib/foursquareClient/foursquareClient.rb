@@ -8,7 +8,8 @@ class FoursquareAdapter
 	attr_accessor :token
 
 	def initialize
-		@client = OAuth2::Client.new(Id, Secret, :site => 'https://foursquare.com/', :authorize_url=> "oauth2/authenticate")
+		@client = OAuth2::Client.new(Id, Secret, :site => 'https://foursquare.com/', :authorize_url=> "oauth2/authenticate", 
+			:token_url=> "oauth2/access_token" )
 		
 	end
 
@@ -21,8 +22,12 @@ class FoursquareAdapter
 	end 
 
 	def generate_client (oauth_code)
-		@token= @client.auth_code.get_token(oauth_code)
-		@client_foursquare=Foursquare2::Client.new(:client_id => id, :client_secret => secret, :token=>@token)
+		p "codigo aqui :"+oauth_code
+		@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://localhost:3000/', :grant_type=> "authorization_code")
+		# @token= @client.auth_code.get_token(gets.chomp, :redirect_uri => 'http://localhost:3000/')
+		@client_foursquare=Foursquare2::Client.new( :oauth_token=>@token.token)
+		p @client_foursquare.search_users(:email=> "leonardo.sanclemente1@gmail.com")
+
 	end
 
 
