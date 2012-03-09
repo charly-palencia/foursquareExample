@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 	end
 
 	def find
-		  @client_result=Foursquare_client.search_users(:mail=> "leonardo.sanclemente1@gmail.com")
+		@users=Foursquare_client.get_users(params)
 
 	end
+
+	def friends 
+		
+	end 
 end
