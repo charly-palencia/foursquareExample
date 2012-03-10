@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 	end
 
 	def badges
-		@badges = Foursquare_client.get_badges_user(108914)
+		user_id = params[:id]
+		@badges = Foursquare_client.get_badges_user(user_id)
 	end
 
 	def friends 
