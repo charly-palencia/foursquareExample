@@ -4,6 +4,7 @@
 		<td>Name</td>
 		<td>Last Name</td>
 		<td>Gender</td>
+		<td>Home City</td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -12,8 +13,9 @@
 			<td><%= user.firstName %></td> 
 			<td><%= user.lastName %></td>
 			<td><%= user.gender %></td>
+			<td><%= user.homeCity %></td>
 			<td><%= link_to 'Badges',  user_badges_path(user.id) %></td>
-			<td><%= link_to 'Friends', 'friends' %></td>
+			<td><%= link_to 'Friends', user_friends_path(user.id) %></td>
 		</tr>
 	<% end %>
 </table>￼ 
