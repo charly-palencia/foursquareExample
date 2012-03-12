@@ -8,6 +8,7 @@ FoursquareExample::Application.routes.draw do
 
   # Sample of named route:
   match 'users/:id/badges' => 'Users#badges', :as=> 'user_badges' 
+  match 'venues/:id/tips' => 'Venues#tips', :as=> 'venues_tips' 
   # This route can be invoked with purchase_url(:id => product.id)
 
   match "users/search" => "Users#search"
