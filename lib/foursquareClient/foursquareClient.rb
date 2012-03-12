@@ -42,6 +42,10 @@ class FoursquareAdapter
 		@client_foursquare.search_users(user_id)
 	end
 
+	def get_venues(options)
+		@client_foursquare.search_venues(options)
+	end
+
 
 
 end  

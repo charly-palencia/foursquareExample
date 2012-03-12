@@ -1,0 +1,30 @@
+ <%= form_tag("find", :method => "post") do %>
+ <table border=0>
+ 	<tr>
+ 		<td><%= label_tag "Latitude,Longitude" %></td>
+ 		<td><%= text_field_tag :ll %></td>
+ 	</tr>
+ 	<tr>
+ 		<td><%= label_tag "Latitude,Longitude in meters" %></td>
+ 		<td><%= text_field_tag :llAcc %></td>
+ 	</tr>
+ 	<tr>
+ 		<td><%= label_tag "Altitude in meters" %></td>
+ 		<td><%= text_field_tag :alt %></td>
+ 	</tr>
+ 	<tr>
+ 		<td><%= label_tag "Venues' name"%></td>
+ 		<td><%= text_field_tag :query %></td>
+ 	</tr>
+ </table>
+  
+  <%= submit_tag "Search" %>
+<% end %>
+
+<!-- String (Object) — :ll - Latitude and longitude in format LAT,LON
+Integer (Object) — :llAcc - Accuracy of the lat/lon in meters.
+Integer (Object) — :alt - Altitude in meters
+Integer (Object) — :altAcc - Accuracy of the altitude in meters
+Integer (Object) — :limit - The limit of results to return.
+String (Object) — :intent - One of checkin, match, or specials.
+String (Object) — :query - Query to match venues on. -->

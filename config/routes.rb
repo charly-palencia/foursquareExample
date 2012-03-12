@@ -13,6 +13,8 @@ FoursquareExample::Application.routes.draw do
   match "users/search" => "Users#search"
   match "users/find" => "Users#find"
   match "users/badges" => "Users#badges"
+  match "venues/search" => "Venues#search"
+  match "venues/find" => "Venues#find"
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
