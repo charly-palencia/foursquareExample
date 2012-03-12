@@ -1,3 +1,4 @@
+require "GmapsClient"
 class VenuesController < ApplicationController
 
 
@@ -14,6 +15,10 @@ class VenuesController < ApplicationController
 			params[:alt] = 0
 		end
 		params[:limit] = 10
+		coordenades=params[:ll].split(",")
+		latitude=coordenades[0].strip
+		longitude=coordenades[1].strip
+		@image_gmaps=GmapsClient.new.getGmapsImage(latitude, longitude)
 		@venues=Foursquare_client.get_venues(params)
 	end
 

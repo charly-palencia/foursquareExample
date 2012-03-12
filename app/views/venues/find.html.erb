@@ -1,6 +1,8 @@
 
+<div style="width:40%; float:left">
 <%@venues.groups[0].items.each do |venue|%>
-<table>
+
+<table >
 	<tr><td>
 		<%=venue.name%>
 	</td></tr>
@@ -25,5 +27,8 @@
 		<tr><td><%= link_to 'Tips', venues_tips_path(venue.id)  %></td></tr>
 </table>
 <br><br>
-<%=map%>
 <%end%>
+</div>
+<div style="width:60%; float:left">
+	<%= image_tag @image_gmaps%>
+</div>
