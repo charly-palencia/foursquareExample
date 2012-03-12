@@ -8,6 +8,7 @@ gem 'rails', '3.2.2'
 gem 'sqlite3'
 gem 'foursquare2', '~> 1.3.6'
 gem "oauth2", "~> 0.5.2"
+gem "googlestaticmap", "~> 1.1.0"
 
 
 # Gems used only for assets and not required

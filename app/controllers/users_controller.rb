@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 	end
 
 	def friends 
-		
+		user_id = params[:id]
+		@friends = Foursquare_client.get_friends_user(user_id)
 	end 
 end

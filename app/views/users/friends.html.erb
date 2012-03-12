@@ -1,0 +1,18 @@
+<table border=1>
+	<tr>
+		<td>Name</td>
+		<td>Last Name</td>
+		<td>Gender</td>
+		<td>Home City</td>
+	</tr>
+	<% @friends.items.each do |user| %>
+		<% @friends.items.each do |user| %>
+			<tr>
+				<td><%= user.firstName %></td> 
+				<td><%= user.lastName %></td>
+				<td><%= user.gender %></td>
+				<td><%= user.homeCity %></td>
+			</tr>
+		<% end %>
+	<% end %>
+</table>￼ 
