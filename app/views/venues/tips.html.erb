@@ -1,4 +1,12 @@
-<%@tips.each do |tips|%>
-	<%=tips%>
-	<br><br>
-<%end%>
+
+	<%@tips.items.each do |tips|%>
+		<table width='30%'>
+			<tr><td>
+				<%=tips.text%>
+			</td></tr>
+			<tr><td align='right'>
+				<%=tips.user.firstName%> <%=tips.user.lastName%>
+			</td></tr>
+		</table>
+		<br><br>
+	<%end%>
