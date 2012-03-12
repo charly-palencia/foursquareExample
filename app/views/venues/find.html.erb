@@ -1,4 +1,28 @@
-<%@venues.groups.each do |venue|%>
-	<%=venue.response.venue%>
-	<br><br>
+
+<%@venues.groups[0].items.each do |venue|%>
+<table>
+	<tr><td>
+		<%=venue.name%>
+	</td></tr>
+		<%if venue.location.address != nil%>
+			<tr><td>
+				<%=venue.location.address%>
+			</td></tr>
+		<%end%>
+		<tr><td>
+			<%=venue.location.city%><span> - </span><%=venue.location.country%>
+		</td></tr>
+		<%if venue.url != nil%>
+			<tr><td>
+				<%=link_to "pagina web", venue.url%>
+			</td></tr>
+		<%end%>
+		<%if venue.contact.twitter != nil%>
+			<tr><td>
+			<span>@</span><%=venue.contact.twitter%>
+			</td></tr>
+		<%end%>
+		<tr><td><%= link_to 'Tips', venues_tips_path(venue.id)  %></td></tr>
+</table>
+<br><br>
 <%end%>

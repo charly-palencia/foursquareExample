@@ -13,4 +13,11 @@ class VenuesController < ApplicationController
 		params[:limit] = 10
 		@venues=Foursquare_client.get_venues(params)
 	end
+
+	def tips
+		parameters = Hash.new(0)
+		parameters[:sort] = "recent"
+		parameters[:limit] = 100
+		@tips = Foursquare_client.get_tips(params[:id], parameters)
+	end
 end

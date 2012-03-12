@@ -42,6 +42,10 @@ class FoursquareAdapter
 		@client_foursquare.user_friends(user_id)
 	end
 
+	def get_tips(id, options)
+		@client_foursquare.venue_tips(id, options)
+	end
+
 
 
 end  
