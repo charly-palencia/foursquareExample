@@ -15,7 +15,9 @@ class VenuesController < ApplicationController
 	end
 
 	def tips
-		venues_id = params[:id]
-		@tips = Foursquare_client.get_badges_user(user_id)
+		parameters = Hash.new(0)
+		parameters[:sort] = "recent"
+		parameters[:limit] = 100
+		@tips = Foursquare_client.get_tips(params[:id], parameters)
 	end
 end
