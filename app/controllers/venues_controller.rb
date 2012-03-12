@@ -12,13 +12,12 @@ class VenuesController < ApplicationController
 			params[:alt] = 0
 		end
 		params[:limit] = 10
-		coordenades=params[:ll].split(",")
-		latitude=coordenades[0].strip
-		p "LATITUD:"+latitude
-		longitude=coordenades[1].strip
-		@image_gmaps=GmapsClient.new.getGmapsImage(latitude, longitude)
+		ll=params[:ll]
 		@venues=Foursquare_client.get_venues(params)
-	end
+	
+		places=@venues.groups[0].items;
+		@image_gmaps=GmapsClient.new.getGmapsImage(ll, places)
+	end	
 
 	def tips
 		parameters = Hash.new(0)
