@@ -1,4 +1,4 @@
-require "Foursquare2"
+
 class UsersController < ApplicationController
 	def search 
 		#nothinhg to do here  

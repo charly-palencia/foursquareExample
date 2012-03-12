@@ -38,7 +38,7 @@ class FoursquareAdapter
 		@client_foursquare.search_venues(options)
 	end
 
-	def get_friends_user(user_id,)
+	def get_friends_user(user_id)
 		@client_foursquare.user_friends(user_id)
 	end
 
