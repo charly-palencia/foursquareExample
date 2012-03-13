@@ -10,6 +10,11 @@ gem 'foursquare2', '~> 1.3.6'
 gem "oauth2", "~> 0.5.2"
 gem "google_static_maps_helper", "~> 1.3.5"
 
+	
+group :development do
+	gem "sqlite3" 
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
