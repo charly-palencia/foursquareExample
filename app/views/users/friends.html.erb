@@ -1,15 +1,10 @@
-<table>
-   <thead>
-   <tr>
-     <th><h3><%= params[:name]%>'s Friends</h3></th>
-   </tr>
- </thead>
-</table>
-<br><br>
 
+<div id="head" style="text-align:center"><h3><%= params[:name]%>'s Friends</h3></div>
+<br><br>
+<% cont=0%>
 <% @friends.each do |user| %>
-      <div id='users' style="margin-top:15px;">
-          <div id='user' style="width:150px; float:left">
+      <div id='users' style="margin-top:15px;float:left;margin-right:45px;">
+          <div id='user' style="width:120px; float:left">
               <table >
                   <tr>
                       <td><h3><%= user.firstName %> <%= user.lastName %></h3></td>
@@ -19,8 +14,13 @@
           </div>
           <div id="user_photo" style="margin-right:15px;float:left;">
               <%= image_tag user.photo, :size => "45x45"%>
-
           </div>
       </div>
-      <div style="clear:both"></div>
+      <% cont+=1%>
+      <%if cont ==3%>
+        <div style="clear:both;">
+      <% cont = 0
+      end%>
+
+
 <% end %>
