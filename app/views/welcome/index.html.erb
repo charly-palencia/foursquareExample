@@ -4,7 +4,7 @@
   <li class="nav-header">FourSquare Search</li>
   <li>
 	<div id="accordion">
-		<h3><a href="#">Search User</a></h3>
+		<h3><a class="clear" href="#">Search User</a></h3>
 		<div>
 			 <%= form_tag("users/find", :method => "post", :id=>"formUser") do %>
 			 <table border=0>
@@ -29,7 +29,7 @@
 			  <%= submit_tag "Search" %>
 			<% end %>
 		</div>
-		<h3><a href="#">Search Venues</a></h3>
+		<h3><a class="clear" href="#">Search Venues</a></h3>
 		<div>
 			 <%= form_tag("venues/find", :method => "post", :id=>"formVenues") do %>
 			 <table border=0>

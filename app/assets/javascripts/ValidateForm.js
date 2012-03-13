@@ -1,14 +1,5 @@
 $(document).ready(function(){
-	$("#findUser").validate({
-		phone: 'digits',
-		email: 'email'
-	}); 
-
-	$("#findVenues").validate({
-		ll: 'required',
-		llAcc: 'digits',
-		alt: 'number'
-	});
+	
 	var options= {
        beforeSubmit: mostrarLoader, //funcion que se ejecuta antes de enviar el form
        success: mostrarRespuesta //funcion que se ejecuta una vez enviado el formulario
@@ -22,6 +13,32 @@ $(document).ready(function(){
           $("#loader_gif").fadeOut("slow"); // Hago desaparecer el loader de ajax
           $("#ajax_loader").html(responseText); 
      };
+     $("#formUser").validate({
+		phone: "digits",
+		email: "email"
+	}); 
+
+	$("#formVenues").validate({
+		ll: "required",
+		llAcc: "digits",
+		alt: "number"	
+	});
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+	$(".clear").click(function(){
+		$("#ajax_loader").html();
+	});
+
+
+	$(".href_ajax").click(function(event){
+		event.preventDefault();
+		var href=$(this).attr("href");
+		$("#loader_gif").fadeIn("slow");
+		$('#ajax_loader').load(href);
+		$("#loader_gif").fadeOut("slow");
+	})
+
 })
 
 

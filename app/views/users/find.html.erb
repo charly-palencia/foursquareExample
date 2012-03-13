@@ -1,5 +1,5 @@
 
-<table border=1>
+<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px">
 	<tr>
 		<td>Name</td>
 		<td>Last Name</td>
@@ -14,8 +14,8 @@
 			<td><%= user.lastName %></td>
 			<td><%= user.gender %></td>
 			<td><%= user.homeCity %></td>
-			<td><%= link_to 'Badges',  user_badges_path(user.id) %></td>
-			<td><%= link_to 'Friends', user_friends_path(user.id) %></td>
+			<td><%= link_to 'Badges',  user_badges_path(user.id), :class=>"href_ajax" %></td>
+			<td><%= link_to 'Friends', user_friends_path(user.id), :class=>"href_ajax" %></td>
 		</tr>
 	<% end %>
 </table>￼ 

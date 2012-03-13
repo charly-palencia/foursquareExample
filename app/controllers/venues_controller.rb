@@ -20,6 +20,7 @@ class VenuesController < ApplicationController
 	
 		places=@venues.groups[0].items;
 		@image_gmaps=GmapsClient.new.getGmapsImage(ll, places)
+		render :layout => false
 	end	
 
 	def tips
@@ -27,5 +28,6 @@ class VenuesController < ApplicationController
 		parameters[:sort] = "recent"
 		parameters[:limit] = 100
 		@tips = Foursquare_client.get_tips(params[:id] , parameters)
+		render :layout => false
 	end
 end
