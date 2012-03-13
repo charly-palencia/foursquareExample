@@ -13,3 +13,7 @@
 */
 
  *= require twitter/bootstrap
+
+ #loading_gif {
+ 	display: none;
+ }

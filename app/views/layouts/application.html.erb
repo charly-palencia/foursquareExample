@@ -18,6 +18,7 @@
     </style>
     <%= stylesheet_link_tag "application", :media => "all" %>
 
+
     <!-- Le fav and touch icons -->
     <link href="images/favicon.ico" rel="shortcut icon">
     <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
@@ -48,8 +49,11 @@
           </div><!--/.well -->
         </div><!--/span-->
 
-        <div class="span8" >
-            adasfsfdasdasdasdasdasda
+        <div class="span8" id="ajax_loader">
+            
+        </div>
+        <div id="loader_gif" class="loading">
+          <%= image_tag "loading.gif" %>
         </div>
       </div><!--/row-->
 
