@@ -15,6 +15,7 @@ $(document).ready(function(){
      };
      function mostrarRespuesta (responseText){
           $("#loader_gif").fadeOut("slow"); // Hago desaparecer el loader de ajax
+
           $("#ajax_loader").html(responseText); 
           //setHrefAjax();
           $(".href_ajax").colorbox();

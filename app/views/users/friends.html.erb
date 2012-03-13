@@ -7,7 +7,7 @@
 </table>
 <br><br>
 
-<% @friends.items.each do |user| %>
+<% @friends.each do |user| %>
       <div id='users' style="margin-top:15px;">
           <div id='user' style="width:150px; float:left">
               <table >
@@ -21,7 +21,6 @@
               <%= image_tag user.photo, :size => "45x45"%>
 
           </div>
-
       </div>
-      <div style="clear:both"></div>￼ 
+      <div style="clear:both"></div>
 <% end %>

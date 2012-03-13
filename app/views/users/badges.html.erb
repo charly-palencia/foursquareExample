@@ -1,3 +1,4 @@
+
 <table width=100%>
    <thead>
    <tr>
@@ -6,11 +7,20 @@
  </thead>
 </table>
 <br><br>
-<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px" class="table table-striped">
-<%@badges.badges.each do |badge|%>
-   <tr>
-           <td><h4><%=badge[1].name%></h4></td>
-           <td><%=badge[1].hint%></td>
-   </tr>
+<%@badges.each do |badge|%>
+   <div id='users' style="margin-top:15px;margin-left:160px">
+          <div id='user' style="width:70%; float:left">
+              <table >
+                  	<tr>
+			           <td><h4><%=badge.name%></h4></td>
+			           <td><%=badge.hint%></td>
+		       		</tr>
+		      </table>
+          </div>
+          <div id="user_photo" style="margin-right:15px;float:left;width:25%">
+              <%=image_tag badge.image.prefix+badge.image.sizes[0].to_s(base=10)+badge.image.name%>
+          </div>
+      </div>
+      <div style="clear:both"></div>
 <%end%>
-</table>
+

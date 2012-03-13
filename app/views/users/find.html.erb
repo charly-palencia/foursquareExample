@@ -1,4 +1,4 @@
-<% @users.results.each do |user| %>
+<% @users.each do |user| %>
        <div id='users' style="margin-top:15px;">
            <div id='user' style="width:220px; float:left">
                <table >
@@ -8,8 +8,9 @@
                    <tr><td><%= user.gender %></td></tr>
                    <tr><td><%= user.homeCity %></td></tr>
                    <tr><td colspan=4>
-                   		<%= link_to 'badge', user_badges_path(user.id, "a"), html_options = {:class=>"href_ajax"}  %> -
-						<%= link_to 'Friends', user_friends_path(user.id, "a"), html_options = {:class=>"href_ajax"}  %></td>
+                   		<%= link_to 'Badges',  
+                   		user_badges_path(user.id, user.name), html_options = {:class=>"href_ajax"} %> -
+						<%= link_to 'Friends', user_friends_path(user.id, user.name), html_options = {:class=>"href_ajax"}  %></td>
 					</tr>
                </table>
            </div>
