@@ -1,11 +1,6 @@
 require "GmapsClient"
 class VenuesController < ApplicationController
 
-
-	def search 
-		#nothinhg to do here  
-	end
-
 	def find		
 
 		if params[:llAcc] == ""
@@ -16,10 +11,9 @@ class VenuesController < ApplicationController
 		end
 		params[:limit] = 10
 		ll=params[:ll]
-		@venues=Foursquare_client.get_venues(params)
+		@venues=Foursquare_client.get_venues(params).groups[0].items
 	
-		places=@venues.groups[0].items;
-		@image_gmaps=GmapsClient.new.getGmapsImage(ll, places)
+		@image_gmaps=GmapsClient.new.getGmapsImage(ll, @venues)
 		render :layout => false
 	end	
 
@@ -27,7 +21,7 @@ class VenuesController < ApplicationController
 		parameters = Hash.new(0)
 		parameters[:sort] = "recent"
 		parameters[:limit] = 100
-		@tips = Foursquare_client.get_tips(params[:id] , parameters)
+		@tips = Foursquare_client.get_tips(params[:id] , parameters).items
 		render :layout => false
 	end
 end

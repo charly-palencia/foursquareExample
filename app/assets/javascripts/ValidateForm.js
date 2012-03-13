@@ -13,7 +13,8 @@ $(document).ready(function(){
      };
      function mostrarRespuesta (responseText){
           $("#loader_gif").fadeOut("slow"); // Hago desaparecer el loader de ajax
-          $("#ajax_loader").html(responseText); 
+          $("#ajax_loader").html(responseText);
+          //ajax for the <a>'s 
           setHrefAjax();
      };
      //ajax on hrefs

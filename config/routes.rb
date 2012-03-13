@@ -7,15 +7,13 @@ FoursquareExample::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  match 'users/:id//:name/badges' => 'Users#badges', :as=> 'user_badges' 
+  match 'users/:id/:name/badges' => 'Users#badges', :as=> 'user_badges' 
   match 'users/:id/:name/friends' => 'Users#friends', :as=> 'user_friends'
   match 'venues/:id/:name/tips' => 'Venues#tips', :as=> 'venues_tips' 
   # This route can be invoked with purchase_url(:id => product.id)
 
-  match "users/search" => "Users#search"
   match "users/find" => "Users#find"
   match "users/badges" => "Users#badges"
-  match "venues/search" => "Venues#search"
   match "venues/find" => "Venues#find"
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
