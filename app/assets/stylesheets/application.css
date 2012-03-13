@@ -17,3 +17,6 @@
  #loading_gif {
  	display: none;
  }
+ .error{
+ 	color: red;
+ }

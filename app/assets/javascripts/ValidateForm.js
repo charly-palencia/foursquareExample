@@ -7,37 +7,45 @@ $(document).ready(function(){
     $('#formUser').ajaxForm(options) ; 
     $('#formVenues').ajaxForm(options) ; 
      function mostrarLoader(){
-          $("#loader_gif").fadeIn("slow"); //muestro el loader de ajax
+     	$("#ajax_loader").html("");
+        $("#loader_gif").fadeIn("slow"); //muestro el loader de ajax
      };
      function mostrarRespuesta (responseText){
           $("#loader_gif").fadeOut("slow"); // Hago desaparecer el loader de ajax
           $("#ajax_loader").html(responseText); 
+          setHrefAjax();
      };
      $("#formUser").validate({
-		phone: "digits",
-		email: "email"
+     	rules:{
+			phone: "digits",
+			email: "email"
+     	}
 	}); 
 
 	$("#formVenues").validate({
-		ll: "required",
-		llAcc: "digits",
-		alt: "number"	
+		rules:{
+			ll: "required",
+			llAcc: "digits",
+			alt: "number"	
+		}
 	});
 	$(function() {
 		$( "#accordion" ).accordion();
 	});
 	$(".clear").click(function(){
-		$("#ajax_loader").html();
+		$("#ajax_loader").html("");
 	});
 
-
-	$(".href_ajax").click(function(event){
-		event.preventDefault();
-		var href=$(this).attr("href");
-		$("#loader_gif").fadeIn("slow");
-		$('#ajax_loader').load(href);
-		$("#loader_gif").fadeOut("slow");
-	})
+	function setHrefAjax(){
+		$(".href_ajax").click(function(event){
+			event.preventDefault();
+			var href=$(this).attr("href");
+			$("#loader_gif").fadeIn("slow");
+			$('#ajax_loader').load(href);
+			$("#loader_gif").fadeOut("slow");
+		});
+	}
+	
 
 })
 
