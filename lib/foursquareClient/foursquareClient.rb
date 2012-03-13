@@ -22,12 +22,15 @@ class FoursquareAdapter
 	end 
 
 	def generate_client (oauth_code)
-		if @client_foursquare==nil
+		begin
 			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://localhost:3000/', 
 				:grant_type=> "authorization_code")
-			@client_foursquare= Foursquare2::Client.new(:oauth_token=> @token.token)
+		rescue
+			authorize_url
+			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://localhost:3000/', 
+				:grant_type=> "authorization_code")
 		end
-		@client_foursquare
+		@client_foursquare= Foursquare2::Client.new(:oauth_token=> @token.token)
 	end
 
 	def get_badges_user(user_id)
