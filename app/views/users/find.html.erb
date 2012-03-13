@@ -8,8 +8,20 @@
 
                    <tr><td><%= user.gender %></td></tr>
                    <tr><td><%= user.homeCity %></td></tr>
-                   <tr><td colspan=4><%= link_to 'Badges',  user_badges_path(user.id, user.firstName+" "+user.lastName), html_options = {:class=>"href_ajax"} %>-
-						<%= link_to 'Friends', user_friends_path(user.id, user.firstName+" "+user.lastName), html_options = {:class=>"href_ajax"}  %></td></tr>
+                   <tr><td colspan=4>
+                   		<% 
+                   		if user.firstName!=nil
+                   			name=user.firstName
+                   		else 
+                   			name=""
+                   		end
+                   		if user.lastName!=nil
+                   			name+=" "+user.lastName
+                   		end	
+                   		%>
+                   		<%= link_to 'Badges',  
+                   		user_badges_path(user.id, name), html_options = {:class=>"href_ajax"} %> -
+						<%= link_to 'Friends', user_friends_path(user.id, name), html_options = {:class=>"href_ajax"}  %></td></tr>
                </table>
            </div>
            <div id="user_photo" style="margin-right:15px;float:left;">

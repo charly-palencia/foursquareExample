@@ -4,6 +4,7 @@ $(document).ready(function(){
        beforeSubmit: mostrarLoader, //funcion que se ejecuta antes de enviar el form
        success: mostrarRespuesta //funcion que se ejecuta una vez enviado el formulario
     };
+    //ajaxform
     $('#formUser').ajaxForm(options) ; 
     $('#formVenues').ajaxForm(options) ; 
      function mostrarLoader(){
@@ -15,6 +16,18 @@ $(document).ready(function(){
           $("#ajax_loader").html(responseText); 
           setHrefAjax();
      };
+     //ajax on hrefs
+	function setHrefAjax(){
+		$(".href_ajax").click(function(event){
+			event.preventDefault();
+			var href=$(this).attr("href");
+			$("#loader_gif").fadeIn("slow");
+			$('#ajax_loader').load(href);
+			$("#loader_gif").fadeOut("slow");
+		});
+	}
+
+     //validations
      $("#formUser").validate({
      	rules:{
 			phone: "digits",
@@ -29,22 +42,24 @@ $(document).ready(function(){
 			alt: "number"	
 		}
 	});
+
+	//acordeon
 	$(function() {
 		$( "#accordion" ).accordion();
 	});
+	//clean screen
 	$(".clear").click(function(){
 		$("#ajax_loader").html("");
 	});
+	$("#formUser input").change(function(){
+		$("#ajax_loader").html("");
+	});
+	$("#formVenues input").change(function(){
+		$("#ajax_loader").html("");
+	});
 
-	function setHrefAjax(){
-		$(".href_ajax").click(function(event){
-			event.preventDefault();
-			var href=$(this).attr("href");
-			$("#loader_gif").fadeIn("slow");
-			$('#ajax_loader').load(href);
-			$("#loader_gif").fadeOut("slow");
-		});
-	}
+
+	
 	
 
 })

@@ -1,18 +1,27 @@
-<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px">
-	<tr>
-		<td>Name</td>
-		<td>Last Name</td>
-		<td>Gender</td>
-		<td>Home City</td>
-	</tr>
-	<% @friends.items.each do |user| %>
-		<% @friends.items.each do |user| %>
-			<tr>
-				<td><%= user.firstName %></td> 
-				<td><%= user.lastName %></td>
-				<td><%= user.gender %></td>
-				<td><%= user.homeCity %></td>
-			</tr>
-		<% end %>
-	<% end %>
-</table>￼ 
+<table>
+   <thead>
+   <tr>
+     <th><h3><%= params[:name]%>'s Friends</h3></th>
+   </tr>
+ </thead>
+</table>
+<br><br>
+
+<% @friends.items.each do |user| %>
+      <div id='users' style="margin-top:15px;">
+          <div id='user' style="width:150px; float:left">
+              <table >
+                  <tr>
+                      <td><h3><%= user.firstName %> <%= user.lastName %></h3></td>
+                  </tr>
+                  <tr><td><%= user.homeCity %></td></tr>
+              </table>
+          </div>
+          <div id="user_photo" style="margin-right:15px;float:left;">
+              <%= image_tag user.photo, :size => "45x45"%>
+
+          </div>
+
+      </div>
+      <div style="clear:both"></div>￼ 
+<% end %>

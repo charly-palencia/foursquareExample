@@ -24,7 +24,7 @@
 			<span>@</span><%=venue.contact.twitter%>
 			</td></tr>
 		<%end%>
-		<tr><td><%= link_to 'Tips', venues_tips_path(venue.id), html_options = {:class=>"href_ajax"}  %></td></tr>
+		<tr><td><%= link_to 'Tips', venues_tips_path(venue.id, venue.name), html_options = {:class=>"href_ajax"}  %></td></tr>
        
 </table>
 <br><br>
