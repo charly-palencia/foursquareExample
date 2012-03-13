@@ -1,12 +1,18 @@
-
-	<%@tips.items.each do |tips|%>
-		<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px">
-			<tr><td>
-				<%=tips.text%>
-			</td></tr>
-			<tr><td align='right'>
-				<%=tips.user.firstName%> <%=tips.user.lastName%>
-			</td></tr>
-		</table>
-		<br><br>
-	<%end%>
+<table>
+   <thead>
+   <tr>
+     <th><h3><%= params[:name]%>'s Tips</h3></th>
+   </tr>
+ </thead>
+</table>
+<br><br>
+<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px" class="table table-striped">
+<%@tips.items.each do |tips|%>
+   <tr><td>
+			<%=tips.text%>
+		</td>
+		<td align='right'>
+			<%=tips.user.firstName%> <%=tips.user.lastName%>
+		</td>
+	</tr>
+<%end%>

@@ -1,9 +1,16 @@
-<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px">
-	<tr><td colspan=2 align='center'>Badges</td></tr>
+<table>
+   <thead>
+   <tr>
+     <th><h3><%= params[:name]%>'s Badges</h3></th>
+   </tr>
+ </thead>
+</table>
+<br><br>
+<table style="border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; margin-right:10px" class="table table-striped">
 <%@badges.badges.each do |badge|%>
-	<tr>
-			<td><%=badge[1].name%></td>
-			<td><%=badge[1].hint%></td>
-	</tr>
+   <tr>
+           <td><h4><%=badge[1].name%></h4></td>
+           <td><%=badge[1].hint%></td>
+   </tr>
 <%end%>
 </table>

@@ -4,6 +4,7 @@ $(document).ready(function(){
        beforeSubmit: mostrarLoader, //funcion que se ejecuta antes de enviar el form
        success: mostrarRespuesta //funcion que se ejecuta una vez enviado el formulario
     };
+    //ajaxform
     $('#formUser').ajaxForm(options) ; 
     $('#formVenues').ajaxForm(options) ; 
      function mostrarLoader(){
@@ -15,6 +16,8 @@ $(document).ready(function(){
           $("#ajax_loader").html(responseText); 
           setHrefAjax();
      };
+
+     //validations
      $("#formUser").validate({
      	rules:{
 			phone: "digits",
@@ -29,6 +32,8 @@ $(document).ready(function(){
 			alt: "number"	
 		}
 	});
+
+	//acordeon
 	$(function() {
 		$( "#accordion" ).accordion();
 	});
@@ -36,6 +41,7 @@ $(document).ready(function(){
 		$("#ajax_loader").html("");
 	});
 
+	//ajax on hrefs
 	function setHrefAjax(){
 		$(".href_ajax").click(function(event){
 			event.preventDefault();
