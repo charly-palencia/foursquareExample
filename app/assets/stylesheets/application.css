@@ -12,7 +12,6 @@
  *= require_tree .
 */
 
- *= require twitter/bootstrap
 
  #loading_gif {
  	display: none;
