@@ -11,7 +11,7 @@ class FoursquareAdapter
 	end
 
 	def authorize_url
-		@client.auth_code.authorize_url(:redirect_uri => 'http://localhost:3000/')
+		@client.auth_code.authorize_url(:redirect_uri => 'http://fourexample.herokuapp.com/')
 	end 
 
 	def has_token?
@@ -20,11 +20,11 @@ class FoursquareAdapter
 
 	def generate_client (oauth_code)
 		begin
-			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://localhost:3000/', 
+			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://fourexample.herokuapp.com/', 
 				:grant_type=> "authorization_code")
 		rescue
 			authorize_url
-			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://localhost:3000/', 
+			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => 'http://fourexample.herokuapp.com/', 
 				:grant_type=> "authorization_code")
 		end
 		@client_foursquare= Foursquare2::Client.new(:oauth_token=> @token.token)
