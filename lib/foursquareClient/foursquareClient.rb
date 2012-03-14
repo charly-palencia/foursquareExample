@@ -1,5 +1,3 @@
-#require "Foursquare2"
-#require 'oauth2'
 class FoursquareAdapter
 
 	Id="QLU245BWOICOUJT2MVWBIDAB3VG2EFHEZFDXR5ECTOOQZ0Y4"
