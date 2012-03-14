@@ -1,4 +1,3 @@
-require "Foursquare2"
 
 class ApplicationController < ActionController::Base
 

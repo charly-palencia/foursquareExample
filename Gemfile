@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+
 gem "oauth2", "~> 0.5.2"
 gem "google_static_maps_helper", "~> 1.3.5"
 gem 'foursquare2', '~> 1.3.6'
@@ -14,12 +14,17 @@ group :development do
 	gem "sqlite3" 
 end
 
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2'
+  gem 'coffee-rails', '~> 3.2'
   gem 'twitter-bootstrap-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

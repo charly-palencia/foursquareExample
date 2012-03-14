@@ -1,4 +1,4 @@
- require "google_static_maps_helper"
+
  class GmapsClient
  	def getGmapsImage (ll, places)
  		#map
