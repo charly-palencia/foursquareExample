@@ -1,4 +1,4 @@
-
+require "gmapsClient"
 class VenuesController < ApplicationController
 
 	def find		
