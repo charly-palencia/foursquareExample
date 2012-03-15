@@ -8,7 +8,7 @@ $(document).ready(function(){
     };
     //ajaxform
     $('#formUser').ajaxForm(options) ; 
-    $('#formVenues').ajaxForm(options) ; 
+    //$('#formVenues').ajaxForm(options) ; 
      function mostrarLoader(){
      	$("#ajax_loader").html("");
         $("#loader_gif").fadeIn("slow"); //muestro el loader de ajax
