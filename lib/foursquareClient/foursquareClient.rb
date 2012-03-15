@@ -24,14 +24,7 @@ class FoursquareAdapter
 	end 
 
 	def generate_client (oauth_code)
-		begin
-			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => Redirect_uri, 
-				:grant_type=> "authorization_code")
-		rescue
-			authorize_url
-			@token= @client.auth_code.get_token(oauth_code, :redirect_uri => Redirect_uri, 
-				:grant_type=> "authorization_code")
-		end
+		@token= @client.auth_code.get_token(oauth_code, :redirect_uri => Redirect_uri, 
 		@client_foursquare= Foursquare2::Client.new(:oauth_token=> @token.token)
 	end
 
