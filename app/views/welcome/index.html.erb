@@ -2,68 +2,17 @@
 <%=javascript_include_tag "javascripts/jquery.validate.js"%>
 <ul class="nav nav-list">
   <li class="nav-header">FourSquare Search</li>
-  <li>
-	<div id="accordion">
-		<h3><a class="clear" href="#">Search User</a></h3>
-		<div>
-			 <%= form_tag("users/find", :method => "post", :id=>"formUser") do %>
-			 <table border=0>
-			 	<tr>
-			 		<td><%= label_tag "Name" %></td>
-			 		<td><%= text_field_tag :name %></td>
-			 	</tr>
-			 	<tr>
-			 		<td><%= label_tag "Phone" %></td>
-			 		<td><%= text_field_tag :phone %></td>
-			 	</tr>
-			 	<tr>
-			 		<td><%= label_tag "E-mail" %></td>
-			 		<td><%= text_field_tag :email %></td>
-			 	</tr>
-			 	<tr>
-			 		<td><%= label_tag "Twitter"%></td>
-			 		<td><%= text_field_tag :twitter %></td>
-			 	</tr>
-			 </table>
-			  
-			  <%= submit_tag "Search" %>
-			<% end %>
-		</div>
-		<h3><a class="clear" href="#">Search Venues</a></h3>
-		<div>
-			 <%= form_tag("venues/find", :method => "post", :id=>"formVenues") do %>
-			 <table border=0>
-			 	<tr>
-			 		<td><%= label_tag "Latitude,Longitude" %></td>
-			 		<td><%= text_field_tag :ll %></td>
-			 	</tr>
-			 	<tr>
-			 		<td><%= label_tag "Accuracy in meters" %></td>
-			 		<td><%= text_field_tag :llAcc %></td>
-			 	</tr>
-			 	<tr>
-			 		<td><%= label_tag "Altitude in meters" %></td>
-			 		<td><%= text_field_tag :alt %></td>
-			 	</tr>
-			 	<tr>
-			 		<td><%= label_tag "Venues' name"%></td>
-			 		<td><%= text_field_tag :query %></td>
-			 	</tr>
-			 </table>
-			  
-			  <%= submit_tag "Search" %>
-			<% end %>
-		</div>
-	</div>
-	<!--
-    <ul class="nav nav-pills nav-stacked">
-    	<li><%=link_to "Search User", "users/search"%></li>
-    	<li style="display:none;" id="user_form" ></li>
-    	<li><%=link_to "Search Venues", "venues/search"%></li>
-    	<li style="display:none;" id="_form"></li>
-    </ul>
-	-->
-  </li>
+  <% if current_user %>
+  		Welcome <%=current_user.name%>
+  		<%= link_to "Sign out", signout_path%>
+  <% else %>
+	<%=link_to "Sign in with twitter", "/auth/twitter" %>
+	<br>
+	<br>
+	<%=link_to "Sign in with foursquare", "/auth/foursquare" %>
+
+	<%end%>
+
 
 </ul>
 

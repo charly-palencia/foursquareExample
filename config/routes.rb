@@ -5,7 +5,8 @@ FoursquareExample::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :signout
   # Sample of named route:
   match 'users/:id/:name/badges' => 'Users#badges', :as=> 'user_badges' 
   match 'users/:id/:name/friends' => 'Users#friends', :as=> 'user_friends'
@@ -15,6 +16,9 @@ FoursquareExample::Application.routes.draw do
   match "users/find" => "Users#find"
   match "users/badges" => "Users#badges"
   match "venues/find" => "Venues#find"
+
+  #soccer fields
+  match "soccer/find" => "Soccer#find"
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

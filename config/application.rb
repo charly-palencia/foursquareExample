@@ -61,7 +61,5 @@ module FoursquareExample
     # used for HEROKU
     config.assets.initialize_on_precompile = false
 
-    #used for gmaps gem
-    config.assets.enabled = true
   end
 end

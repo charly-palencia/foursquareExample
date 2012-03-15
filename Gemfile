@@ -11,6 +11,10 @@ gem "oauth2", "~> 0.5.2"
 gem 'foursquare2', '~> 1.3.6'
 gem "gmaps4rails", "~> 1.4.7"
 
+gem 'rack'
+gem "omniauth-twitter"
+gem "omniauth-facebook"
+gem 'omniauth-foursquare'
 	
 group :development do
 	gem "sqlite3" 

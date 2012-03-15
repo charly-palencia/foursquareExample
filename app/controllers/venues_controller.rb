@@ -10,10 +10,11 @@ class VenuesController < ApplicationController
 			params[:alt] = 0
 		end
 		params[:limit] = 10
-		ll=params[:ll]
-		@venues=Foursquare_client.get_venues(params).groups[0].items
+		# ll=params[:ll]
+		# @venues=Foursquare_client.get_venues(params).groups[0].items
 	
-		@image_gmaps=GmapsClient.new.getGmapsImage(ll, @venues)
+		# @image_gmaps=GmapsClient.new.getGmapsImage(ll, @venues)
+		@venues=Foursquare_client.get_venues_by_category(params)
 		render :layout => false
 	end	
 
