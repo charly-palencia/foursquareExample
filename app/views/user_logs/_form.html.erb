@@ -1,0 +1,33 @@
+<%= form_for(@user_log) do |f| %>
+  <% if @user_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_log.errors.count, "error") %> prohibited this user_log from being saved:</h2>
+
+      <ul>
+      <% @user_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :provider %><br />
+    <%= f.text_field :provider %>
+  </div>
+  <div class="field">
+    <%= f.label :uid %><br />
+    <%= f.text_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.text_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

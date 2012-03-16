@@ -1,20 +1,28 @@
 
-<%=javascript_include_tag "javascripts/jquery.validate.js"%>
-<ul class="nav nav-list">
-  <li class="nav-header">FourSquare Search</li>
-  <% if current_user %>
-  		Welcome <%=current_user.name%>
-  		<%= link_to "Sign out", signout_path%>
-  <% else %>
-	<%=link_to "Sign in with twitter", "/auth/twitter" %>
-	<br>
-	<br>
-	<%=link_to "Sign in with foursquare", "/auth/foursquare" %>
+<div class="hero-unit hero-box-with-shadow">
+	<div class="row" >
+		<h2 style="margin-left:44%">WELCOME TO</h2>
+		<h1 style="margin-left:20%; margin-bottom:30px">
+			Your soccer fields nearby</h1>
 
-	<%end%>
+		<h2 style="margin-left:46%; margin-bottom:30px">
+			Sign in by</h2>
+	  <% if current_user %>
+	  		Welcome <%=current_user.name%>
+	  		<%=image_tag current_user.photo, :size => "32x32"%>
+	  		<%= link_to "Sign out", signout_path%>
+	  <% else %>
+	  	
+			<div style="float:left;margin-right:40px;margin-left:40%"><%=link_to image_tag(asset_path 'twitter-bird.png', :border=>0), "/auth/twitter" %></div>
+
+			<div style="float:left;margin-right:40px"><%=link_to image_tag(asset_path 'foursquare.png', :border=>0), "/auth/foursquare" %></div>
+
+			<div style="float:left"><%=link_to image_tag(asset_path 'facebook.png', :border=>0), "/auth/facebook" %></div>
+		<%end%>
+	</div>
+</div>
 
 
-</ul>
 
 
 
