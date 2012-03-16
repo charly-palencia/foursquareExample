@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>FoursquareExample</title>
     <%= csrf_meta_tags %>
 
@@ -45,12 +47,12 @@
 
         <div class="span4">
           <div class="well sidebar-nav">
-              <%= yield %>
+              
           </div><!--/.well -->
         </div><!--/span-->
 
         <div class="span8" id="ajax_loader">
-            
+          <%= yield %>  
         </div>
         <div id="loader_gif" class="loading">
           <%= image_tag "loading.gif" %>
