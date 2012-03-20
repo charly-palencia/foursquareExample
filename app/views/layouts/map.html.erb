@@ -1,0 +1,28 @@
+<html>
+	<!DOCTYPE html>
+	<head>
+		<style type="text/css">
+	      html { height: 100% }
+	      body { height: 100%; margin: 0; padding: 0 }
+	      #map_canvas { height: 100%; width: 100%; }
+	    </style>
+	    <%= stylesheet_link_tag "navbar_bootstrap", :media => "all" %>
+		<%= javascript_include_tag "jquery.js" %>
+		<%= javascript_include_tag "venues_map" %>
+	</head>
+	<body>
+		<div class="navbar">
+	    	<div class="navbar-inner">
+	        	<span class="brand fs20 aling_right" >Welcome </span>
+	        	<span class="brand fs15" ><%=session[:user].name%></span>
+	        	<a href="#">Sign out</a>
+	    	</div>
+	  	</div>
+		<div>
+			<%= yield %> 
+		</div>
+		<footer>	
+			
+		</footer>
+	</body>
+</html>

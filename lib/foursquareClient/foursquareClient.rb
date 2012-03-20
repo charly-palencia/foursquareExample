@@ -38,7 +38,6 @@ class FoursquareAdapter
 	# 	@client_foursquare= Foursquare2::Client.new(:oauth_token=> @token.token)
 	# end
 
-	
 
 	def get_badges_user(user_id)
 		badges = @client_foursquare.user_badges(user_id)

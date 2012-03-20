@@ -7,20 +7,22 @@ gem 'rails', '3.2'
 
 
 gem "oauth2", "~> 0.5.2"
-gem "google_static_maps_helper", "~> 1.3.5"
+# gem "google_static_maps_helper", "~> 1.3.5"
 gem 'foursquare2', '~> 1.3.6'
+
 gem 'rack'
 gem "omniauth-twitter"
 gem "omniauth-facebook"
 gem 'omniauth-foursquare'
 	
 group :development do
-	gem "sqlite3" 
+	#gem "sqlite3" 
+  gem "pg", "~> 0.13.2"
 end
 
 group :production do
   gem 'thin'
-  gem 'pg'
+  gem 'pg', "~> 0.13.2"
 end
 
 

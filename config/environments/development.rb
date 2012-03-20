@@ -37,8 +37,8 @@ FoursquareExample::Application.configure do
 
   $stdout.sync= true
 
-  #gmaps GoogleStaticMapsHelper
-  GoogleStaticMapsHelper.size = '300x600'
-  GoogleStaticMapsHelper.sensor = false
+  # #gmaps GoogleStaticMapsHelper
+  # GoogleStaticMapsHelper.size = '300x600'
+  # GoogleStaticMapsHelper.sensor = false
   
 end
