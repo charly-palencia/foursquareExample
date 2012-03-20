@@ -14,8 +14,9 @@ class SoccerController < ApplicationController
 		markups.push ({
 				"lat"=> lat, 
 				"lng"=> lng,
-				"image"=>session[:user].photo,
-				"tittle"=>session[:user].name
+				"image"=>"http://lh3.ggpht.com/avlZSzbiNYEFPmfN87cVzkmh9Z-2D53tHR8tBT7JhMPytvapW6wzOgrzuJpEtxqHXBoohR59SF9KaBNz=s48",
+				"tittle"=>"you are here",
+				"address"=>""	
 			})
 		
 		venues=Foursquare_client.get_venues_by_category(params).groups[0].items 
@@ -36,7 +37,7 @@ class SoccerController < ApplicationController
 			markups.push ({
 				"lat"=> venue.location.lat, 
 				"lng"=> venue.location.lng,
-				"image"=>"http://i48.photobucket.com/albums/f205/edch90/Soccer-Ball.png",
+				"image"=>"http://aux4.iconpedia.net/uploads/983983355692885407.png",
 				"tittle"=>venue.name,
 				"address"=>address				
 			})

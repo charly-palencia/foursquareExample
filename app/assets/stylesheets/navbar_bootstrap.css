@@ -5,26 +5,40 @@ nav{display:block;}
   height: 50px;
 }
 .navbar-inner{
-
+  padding: 5px 0px 5px 0px;
 }
 
 .brand{
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-  padding-top:10px;
   color: #fff;
   text-decoration:none;
   display: block;
   float:left;
+  margin-right: 5px;
 }
 
 .aling_right{
-    margin-left:60%;
+    margin-left:70%;
 }
 
 .fs20{
     font-size: 20px;
+    padding-top:10px;
+
 }
 
 .fs15{
     font-size: 15px;
+    padding-top:15px;
+
 }
+
+
+.brand a{
+  display: block;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #fff;
+  text-decoration:none;
+  
+}
+

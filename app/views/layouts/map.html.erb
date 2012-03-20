@@ -13,9 +13,10 @@
 	<body>
 		<div class="navbar">
 	    	<div class="navbar-inner">
-	        	<span class="brand fs20 aling_right" >Welcome </span>
-	        	<span class="brand fs15" ><%=session[:user].name%></span>
-	        	<a href="#">Sign out</a>
+	        	<span class="brand fs15 aling_right" >Welcome </span>
+	        	<span class="brand fs20" ><%=session[:user].name%></span>
+	        	<span class="brand"><%= image_tag session[:user].photo, :size => "32x32"%></span>
+	        	<span class="brand"><%= link_to "Sign out", signout_path, :class=>"fs15"%></span>
 	    	</div>
 	  	</div>
 		<div>
