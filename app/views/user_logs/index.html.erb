@@ -1,0 +1,29 @@
+<h1>Listing user_logs</h1>
+
+<table>
+  <tr>
+    <th>Provider</th>
+    <th>Uid</th>
+    <th>Name</th>
+    <th>Photo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_logs.each do |user_log| %>
+  <tr>
+    <td><%= user_log.provider %></td>
+    <td><%= user_log.uid %></td>
+    <td><%= user_log.name %></td>
+    <td><%= user_log.photo %></td>
+    <td><%= link_to 'Show', user_log %></td>
+    <td><%= link_to 'Edit', edit_user_log_path(user_log) %></td>
+    <td><%= link_to 'Destroy', user_log, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User log', new_user_log_path %>

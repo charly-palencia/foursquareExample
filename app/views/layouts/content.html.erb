@@ -2,8 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>FoursquareExample</title>
     <%= csrf_meta_tags %>
 
@@ -29,17 +27,46 @@
   </head>
   <body>
 
-   
+    <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="http://localhost:3000/">FourSquare Search</a>
+      </div>
+    </div>
+  </div>
 
-    <div class="container">
-      
-      <%= yield %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+
+        <div class="span4">
+          <div class="well sidebar-nav">
+              <%= yield %>
+          </div><!--/.well -->
+        </div><!--/span-->
+
+        <div class="span8" id="ajax_loader">
+            
+        </div>
+        <div id="loader_gif" class="loading">
+          <%= image_tag "loading.gif" %>
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Koombea 2012</p>
+      </footer>
 
     </div> <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
 
   </body>
 </html>

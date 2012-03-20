@@ -16,12 +16,13 @@ gem "omniauth-facebook"
 gem 'omniauth-foursquare'
 	
 group :development do
-	gem "sqlite3" 
+	#gem "sqlite3" 
+  gem "pg", "~> 0.13.2"
 end
 
 group :production do
   gem 'thin'
-  gem 'pg'
+  gem 'pg', "~> 0.13.2"
 end
 
 

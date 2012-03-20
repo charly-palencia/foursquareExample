@@ -14,19 +14,31 @@ class SoccerController < ApplicationController
 		markups.push ({
 				"lat"=> lat, 
 				"lng"=> lng,
-				"image"=>"../images/soccer-ball.png",
-				"tittle"=>"NombreUser"
+				"image"=>session[:user].photo,
+				"tittle"=>session[:user].name
 			})
 		
 		venues=Foursquare_client.get_venues_by_category(params).groups[0].items 
 		# raise venues.to_s
 		venues.each do |venue|
+
+			address = ""
+
+			if(venue.location.address!=nil)
+				address += venue.location.address
+			end
+
+			if(venue.location.crossStreet!=nil)
+				address += ' '+venue.location.crossStreet
+			end
+
+
 			markups.push ({
 				"lat"=> venue.location.lat, 
 				"lng"=> venue.location.lng,
-				"image"=>"",
+				"image"=>"http://i48.photobucket.com/albums/f205/edch90/Soccer-Ball.png",
 				"tittle"=>venue.name,
-				"animation"=> "google.maps.AnimationDROP"
+				"address"=>address				
 			})
 		end
 		json={"markups"=> markups}

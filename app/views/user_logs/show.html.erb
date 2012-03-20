@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Provider:</b>
+  <%= @user_log.provider %>
+</p>
+
+<p>
+  <b>Uid:</b>
+  <%= @user_log.uid %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user_log.name %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= @user_log.photo %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_log_path(@user_log) %> |
+<%= link_to 'Back', user_logs_path %>

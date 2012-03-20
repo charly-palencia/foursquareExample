@@ -1,0 +1,30 @@
+nav{display:block;}
+.navbar {
+  overflow: visible;
+  background: #000;
+  height: 50px;
+}
+.navbar-inner{
+
+}
+
+.brand{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-top:10px;
+  color: #fff;
+  text-decoration:none;
+  display: block;
+  float:left;
+}
+
+.aling_right{
+    margin-left:60%;
+}
+
+.fs20{
+    font-size: 20px;
+}
+
+.fs15{
+    font-size: 15px;
+}

@@ -1,4 +1,6 @@
 FoursquareExample::Application.routes.draw do
+  resources :user_logs
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -18,7 +20,7 @@ FoursquareExample::Application.routes.draw do
   match "venues/find" => "Venues#find"
 
   #soccer fields
-  match "soccer/find" => "Soccer#find"
+  match "soccer/find" => "Soccer#find", :as=> 'soccer_find'
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
